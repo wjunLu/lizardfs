@@ -539,7 +539,7 @@ void Client::flush(Context &ctx, FileInfo *fileinfo, std::error_code &ec) {
 
 void Client::fsync(Context &ctx, FileInfo *fileinfo) {
 	std::error_code ec;
-	fsync(ctx, fileinfo);
+	fsync(ctx, fileinfo, &ec);
 	if (ec) {
 		throw std::system_error(ec);
 	}
